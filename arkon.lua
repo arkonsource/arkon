@@ -1225,7 +1225,7 @@ end
 print('This is Video')
 end 
 
-if msg.content.luatele == "messageVoiceNote" and not msg.Distinguished then  -- ال1594834563
+if msg.content.luatele == "messageVoiceNote" and not msg.Distinguished then  -- البصمات
 local Voice_Group = Redis:get(Thearkon.."arkon:Lock:vico"..msg_chat_id)
 if Voice_Group == "del" then
 LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id})
@@ -2323,7 +2323,7 @@ if not msg.ControllerBot then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*- هاذا الامر يخص { '..Controller_Num(1)..' }* ',"md",true)  
 end
 os.execute('rm -rf arkon.lua')
-download('https://raw.githubusercontent.com/arkonsource/arkon/main/arkon.lua','arkon.lua')
+download('https://raw.githubusercontent.com/MoooNsource/arkon/main/arkon.lua','arkon.lua')
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*- تم تحديث السورس * ',"md",true)  
 end
 if text == ' تعطيل الاذاعه ' or text == 'تعطيل الاذاعه' then
@@ -6666,7 +6666,7 @@ keyboard.inline_keyboard = {
 local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/fgfgty12/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
-if text == "1594834563 اركون" then
+if text == "بصمات اركون" then
 Abs = math.random(2,140); 
 local Text ='*تجميع اركون . *'
 keyboard = {} 
@@ -9914,15 +9914,19 @@ local m = "https://t.me/lpooopp/"..Rrr..""
 local rep = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&photo="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown")
 end
-if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'ياسورس' then
-photo = "https://t.me/Picturarkon/2"
-local T =[[𝘸𝘦𝘭𝘤𝘰𝘮𝘦 𝘵𝘰 𝘵𝘩𝘦 𝘢𝘳𝘬𝘰𝘯 𝘴𝘰𝘶𝘳𝘤𝘦 .]]
-eyboard = {} 
+if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then
+if ChannelJoin(msg) == false then
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = '𝘢𝘳𝘬𝘰𝘯 𝘴𝘰𝘶𝘳𝘤𝘦 .', url = 't.me/ArkonSource'}, },}}
+return bot.sendText(msg.chat_id,msg.id,'*\n￤عذراً ، عليك الأشتراك في قناة البوت أولاً ،*',"md",false, false, false, false, reply_markup)
+end
+local Text = "𝘸𝘦𝘭𝘤𝘰𝘮𝘦 𝘵𝘰 𝘵𝘩𝘦 𝘢𝘳𝘬𝘰𝘯 𝘴𝘰𝘶𝘳𝘤𝘦 ."
+keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '𝘢𝘳𝘬𝘰𝘯 𝘴𝘰𝘶𝘳𝘤𝘦 .', url = "https://t.me/ArkonSource"}}}
-local msgg = msg_id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+{text = '𝘢𝘳𝘬𝘰𝘯 𝘴𝘰𝘶𝘳𝘤𝘦 . ',url="t.me/ArkonSource"}
+},
+}
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg.chat_id .. "&photo=https://t.me/ArkonSource&caption=".. URL.escape(Text).."&photo=0&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 elseif text == 'الاوامر' then
 if not msg.Addictive then
@@ -11951,7 +11955,8 @@ LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Info_User,'- تم ارسال ر
 end
 end
 end 
-end
+end --UserBot
+end -- File_Bot_Run
 
 
 function CallBackLua(data) --- هذا الكالباك بي الابديت
