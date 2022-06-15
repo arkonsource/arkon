@@ -9917,7 +9917,7 @@ end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'ياسورس' then
 keyboard = {} 
 keyboard.inline_keyboard = {{{text = '𝘢𝘳𝘬𝘰𝘯 𝘴𝘰𝘶𝘳𝘤𝘦 .', url = "https://t.me/ArkonSource"}}}
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo=https://t.me/ArkonSource&caption=".. URL.escape("arkon").."&reply_to_message_id="..(msg_id/2097152/0.5).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo=https://t.me/ArkonSource&caption=".. URL.escape("𝘸𝘦𝘭𝘤𝘰𝘮𝘦 𝘵𝘰 𝘵𝘩𝘦 𝘢𝘳𝘬𝘰𝘯 𝘴𝘰𝘶𝘳𝘤𝘦 .").."&reply_to_message_id="..(msg_id/2097152/0.5).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 elseif text == 'الاوامر' then
 if not msg.Addictive then
