@@ -9914,20 +9914,17 @@ local m = "https://t.me/lpooopp/"..Rrr..""
 local rep = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&photo="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown")
 end
-if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then
-if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = '𝘢𝘳𝘬𝘰𝘯 𝘴𝘰𝘶𝘳𝘤𝘦 .', url = 't.me/ArkonSource'}, },}}
-return bot.sendText(msg.chat_id,msg.id,'*\n￤عذراً ، عليك الأشتراك في قناة البوت أولاً ،*',"md",false, false, false, false, reply_markup)
-end
-local Text = "𝘸𝘦𝘭𝘤𝘰𝘮𝘦 𝘵𝘰 𝘵𝘩𝘦 𝘢𝘳𝘬𝘰𝘯 𝘴𝘰𝘶𝘳𝘤𝘦 ."
+if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'ياسورس' then
+photo = "https://t.me/Picturarkon/2"
+local T =[[
+𝘸𝘦𝘭𝘤𝘰𝘮𝘦 𝘵𝘰 𝘵𝘩𝘦 𝘢𝘳𝘬𝘰𝘯 𝘴𝘰𝘶𝘳𝘤𝘦 .
+]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '𝘢𝘳𝘬𝘰𝘯 𝘴𝘰𝘶𝘳𝘤𝘦 . ',url="t.me/ArkonSource"}
-},
-}
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg.chat_id .. "&photo=https://t.me/ArkonSource&caption=".. URL.escape(Text).."&photo=0&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-end
+{text = ' 𝘢𝘳𝘬𝘰𝘯 𝘴𝘰𝘶𝘳𝘤𝘦 . ', url = "ArkonSource"}}}
+local msgg = msg_id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 elseif text == 'الاوامر' then
 if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*-هاذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
