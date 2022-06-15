@@ -9915,7 +9915,7 @@ local rep = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&photo="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown")
 end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'ياسورس' then
-photo = "https://t.me/Picturarkon/2"
+photo = "https://t.me/Picturarkon/50"
 local T =[[
 𝘸𝘦𝘭𝘤𝘰𝘮𝘦 𝘵𝘰 𝘵𝘩𝘦 𝘢𝘳𝘬𝘰𝘯 𝘴𝘰𝘶𝘳𝘤𝘦 .
 ]]
